@@ -1,0 +1,20 @@
+.item {
+	display: flex;
+	cursor: pointer;
+}
+
+.text {
+	color: var(--text-inactive-color);
+}
+
+.icon {
+	fill: var(--text-inactive-color);
+}
+
+.item.active .text {
+	color: var(--text-primary-color);
+}
+
+.item.active .icon {
+	fill: var(--text-primary-color);
+}

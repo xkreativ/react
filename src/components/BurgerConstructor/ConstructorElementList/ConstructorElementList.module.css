@@ -1,0 +1,39 @@
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.middle {
+	composes: list;
+	max-height: 465px;
+	overflow-y: scroll;
+}
+
+.list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: end;
+	gap: 8px;
+}
+
+.dragger {
+	cursor: grab;
+}
+
+.custom-scroll {
+	scrollbar-color: initial;;
+}
+
+.custom-scroll::-webkit-scrollbar {
+	width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+	background: #2F2F37;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+	background: #8585AD;
+}

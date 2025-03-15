@@ -1,4 +1,6 @@
 :root {
+	--primary-color: #F2F2F3;
+	--secondary-color: #8585AD;
 	color: rgb(255 255 255 / 87%);
 	font-weight: 400;
 	font-size: 16px;
@@ -24,8 +26,6 @@ a:hover {
 }
 
 body {
-	display: flex;
-	justify-content: center;
 	align-items: center;
 	min-width: 320px;
 	min-height: 100vh;

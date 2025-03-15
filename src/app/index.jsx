@@ -1,36 +1,24 @@
-import { clsx } from 'clsx';
-import { useState } from 'react';
-import s from './app.module.scss';
-import reactLogo from './assets/react.svg';
-import { ReactComponent as TypescriptLogo } from './assets/typescript.svg';
-import { add } from '@utils/one';
-import { AppHeader } from '@components/app-header/app-header';
+import styles from './app.module.scss';
+
+// eslint-disable-next-line import/no-named-as-default
+import clsx from 'clsx';
+import React from 'react';
+
+import { AppHeader } from '../components/AppHeader/AppHeader';
+import { BurgerIngredients } from '../components/BurgerIngredients/BurgerIngredients';
+import { BurgerConstructor } from '../components/BurgerConstructor/BurgerConstructor';
+import { ingredients as initialIngredients } from '../utils/data';
 
 export const App = () => {
-	// const num = 0
-	const [count, setCount] = useState(0);
+	const [ingredients, setIngredients] = React.useState(initialIngredients);
 
 	return (
-		<div className='page'>
+		<>
 			<AppHeader />
-			<div className='logo-wrapper'>
-				<a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-					<img
-						src={reactLogo}
-						className={clsx(s.logo, s.react)}
-						alt={`React logo ${add(2, 5)}`}
-					/>
-				</a>
-				<a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-					<TypescriptLogo className={s.logo} />
-				</a>
-			</div>
-			<h1>React + TS</h1>
-			<div className={s.card}>
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-			</div>
-		</div>
+			<main className={clsx(styles.constructor, 'container')}>
+				<BurgerIngredients ingredients={ingredients} />
+				<BurgerConstructor ingredients={ingredients} />
+			</main>
+		</>
 	);
 };
