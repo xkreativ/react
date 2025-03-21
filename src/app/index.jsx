@@ -10,7 +10,8 @@ import { BurgerConstructor } from '../components/BurgerConstructor/BurgerConstru
 import { ingredients as initialIngredients } from '../utils/data';
 
 export const App = () => {
-	const [ingredients, setIngredients] = React.useState(initialIngredients);
+	// eslint-disable-next-line import/no-named-as-default-member
+	const [ingredients] = React.useState(initialIngredients);
 
 	return (
 		<>

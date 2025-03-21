@@ -1,4 +1,5 @@
 import styles from './BurgerConstructor.module.css';
+import PropTypes from 'prop-types';
 
 import React from 'react';
 import { ConstructorElementList } from './ConstructorElementList/ConstructorElementList';
@@ -17,4 +18,15 @@ export const BurgerConstructor = ({ ingredients }) => {
 			<OrderSummary total={total} />
 		</div>
 	);
+};
+
+BurgerConstructor.propTypes = {
+	ingredients: PropTypes.arrayOf(
+		PropTypes.shape({
+			_id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			price: PropTypes.number.isRequired,
+			image: PropTypes.string.isRequired,
+		})
+	).isRequired,
 };

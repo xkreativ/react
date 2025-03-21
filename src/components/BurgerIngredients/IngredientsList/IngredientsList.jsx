@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import styles from './IngredientsList.module.css';
 
-// eslint-disable-next-line import/no-named-as-default
 import clsx from 'clsx';
 
 import { translateIngredientTypes } from '@utils/translateIngredientTypes';
@@ -15,8 +15,8 @@ export const IngredientsList = ({ ingredients }) => {
 						{translateIngredientTypes(type)}
 					</p>
 					<ul className={clsx(styles.list, 'pt-6 pr-2 pb-10 pl-4')}>
-						{items.map((item, index) => (
-							<li className={styles['list-item']} key={index}>
+						{items.map((item) => (
+							<li className={styles['list-item']} key={item._id}>
 								<img className='pl-4 pr-4' src={item.image} alt={item.name} />
 								<p
 									className={clsx(
@@ -39,4 +39,17 @@ export const IngredientsList = ({ ingredients }) => {
 			))}
 		</section>
 	);
+};
+
+IngredientsList.propTypes = {
+	ingredients: PropTypes.objectOf(
+		PropTypes.arrayOf(
+			PropTypes.shape({
+				_id: PropTypes.string.isRequired,
+				image: PropTypes.string.isRequired,
+				name: PropTypes.string.isRequired,
+				price: PropTypes.number.isRequired,
+			})
+		)
+	).isRequired,
 };

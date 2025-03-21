@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	scroll-snap-type: y mandatory;
 }
 
 .middle {
@@ -16,6 +17,7 @@
 	align-items: center;
 	align-self: end;
 	gap: 8px;
+	scroll-snap-align: start;
 }
 
 .dragger {
@@ -23,7 +25,7 @@
 }
 
 .custom-scroll {
-	scrollbar-color: initial;;
+	scrollbar-color: initial;
 }
 
 .custom-scroll::-webkit-scrollbar {
@@ -31,9 +33,9 @@
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-	background: #2F2F37;
+	background: #2f2f37;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-	background: #8585AD;
+	background: #8585ad;
 }

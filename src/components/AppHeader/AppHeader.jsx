@@ -16,7 +16,10 @@ export const AppHeader = () => (
 			<Logo />
 		</div>
 		<div className={styles.profile}>
-			<HeaderNavItem icon={ProfileIcon} name={'Личный кабинет'}></HeaderNavItem>
+			<HeaderNavItem
+				icon={ProfileIcon}
+				name={'Личный кабинет'}
+				active></HeaderNavItem>
 		</div>
 	</header>
 );

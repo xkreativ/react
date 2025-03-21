@@ -1,7 +1,7 @@
 import styles from './TabList.module.css';
+import PropTypes from 'prop-types';
 
 import React from 'react';
-// eslint-disable-next-line import/no-named-as-default
 import clsx from 'clsx';
 
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
@@ -22,4 +22,15 @@ export const TabList = ({ tabs }) => {
 			})}
 		</div>
 	);
+};
+
+TabList.propTypes = {
+	tabs: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string.isRequired,
+			text: PropTypes.string.isRequired,
+			isActive: PropTypes.bool.isRequired,
+			onClick: PropTypes.func.isRequired,
+		})
+	).isRequired,
 };

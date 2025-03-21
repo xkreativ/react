@@ -28,7 +28,7 @@
 }
 
 .custom-scroll {
-	scrollbar-color: initial;;
+	scrollbar-color: initial;
 }
 
 .custom-scroll::-webkit-scrollbar {
@@ -36,9 +36,9 @@
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-	background: #2F2F37;
+	background: #2f2f37;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-	background: #8585AD;
+	background: #8585ad;
 }

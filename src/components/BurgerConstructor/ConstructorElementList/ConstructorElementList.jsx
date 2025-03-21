@@ -1,10 +1,10 @@
 import styles from './ConstructorElementList.module.css';
+import PropTypes from 'prop-types';
 
 import {
 	ConstructorElement,
 	DragIcon,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-// eslint-disable-next-line import/no-named-as-default
 import clsx from 'clsx';
 
 export const ConstructorElementList = ({ ingredients }) => {
@@ -17,7 +17,7 @@ export const ConstructorElementList = ({ ingredients }) => {
 						<ConstructorElement
 							type='top'
 							isLocked={true}
-							text={ingredients[0]?.name}
+							text={ingredients[0]?.name + ' (верх)'}
 							price={ingredients[0]?.price}
 							thumbnail={ingredients[0]?.image}
 						/>
@@ -48,9 +48,9 @@ export const ConstructorElementList = ({ ingredients }) => {
 						<ConstructorElement
 							type='bottom'
 							isLocked={true}
-							text={ingredients[ingredients.length - 1]?.name}
-							price={ingredients[ingredients.length - 1]?.price}
-							thumbnail={ingredients[ingredients.length - 1]?.image}
+							text={ingredients[0]?.name + ' (низ)'}
+							price={ingredients[0]?.price}
+							thumbnail={ingredients[0]?.image}
 						/>
 					</div>
 				</>
@@ -59,4 +59,15 @@ export const ConstructorElementList = ({ ingredients }) => {
 			)}
 		</section>
 	);
+};
+
+ConstructorElementList.propTypes = {
+	ingredients: PropTypes.arrayOf(
+		PropTypes.shape({
+			_id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			price: PropTypes.number.isRequired,
+			image: PropTypes.string.isRequired,
+		})
+	).isRequired,
 };

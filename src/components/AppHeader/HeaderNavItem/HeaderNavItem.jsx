@@ -1,5 +1,5 @@
 import styles from './HeaderNavItem.module.css';
-// eslint-disable-next-line import/no-named-as-default
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 export const HeaderNavItem = (props) => {
@@ -18,4 +18,10 @@ export const HeaderNavItem = (props) => {
 			</span>
 		</li>
 	);
+};
+
+HeaderNavItem.propTypes = {
+	icon: PropTypes.elementType.isRequired,
+	name: PropTypes.string.isRequired,
+	active: PropTypes.bool.isRequired,
 };

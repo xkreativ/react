@@ -1,8 +1,8 @@
 import styles from './BurgerIngredients.module.css';
 
-// eslint-disable-next-line import/no-named-as-default
 import clsx from 'clsx';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { translateIngredientTypes } from '@utils/translateIngredientTypes';
 
@@ -10,7 +10,6 @@ import { TabList } from './TabList/TabList';
 import { IngredientsList } from './IngredientsList/IngredientsList';
 
 export const BurgerIngredients = ({ ingredients }) => {
-	// eslint-disable-next-line import/no-named-as-default-member
 	const [currentTab, setCurrentTab] = React.useState('bun');
 
 	const mapping = {};
@@ -40,4 +39,16 @@ export const BurgerIngredients = ({ ingredients }) => {
 			<IngredientsList ingredients={mapping} />
 		</section>
 	);
+};
+
+BurgerIngredients.propTypes = {
+	ingredients: PropTypes.arrayOf(
+		PropTypes.shape({
+			_id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			type: PropTypes.string.isRequired,
+			price: PropTypes.number.isRequired,
+			image: PropTypes.string.isRequired,
+		})
+	).isRequired,
 };

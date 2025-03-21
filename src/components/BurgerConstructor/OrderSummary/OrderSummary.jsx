@@ -1,10 +1,12 @@
 import styles from './OrderSummary.module.css';
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
 	Button,
 	CurrencyIcon,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-// eslint-disable-next-line import/no-named-as-default
+
 import clsx from 'clsx';
 
 const OrderSummary = ({ total }) => {
@@ -23,6 +25,10 @@ const OrderSummary = ({ total }) => {
 			</Button>
 		</div>
 	);
+};
+
+OrderSummary.propTypes = {
+	total: PropTypes.number.isRequired,
 };
 
 export default OrderSummary;
