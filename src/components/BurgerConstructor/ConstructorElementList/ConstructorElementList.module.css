@@ -13,10 +13,11 @@
 
 .list-item {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 	align-self: end;
 	gap: 8px;
+	width: 100%;
 	scroll-snap-align: start;
 }
 

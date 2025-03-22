@@ -1,5 +1,4 @@
 import styles from './AppHeader.module.css';
-// eslint-disable-next-line import/no-named-as-default
 import clsx from 'clsx';
 
 import {

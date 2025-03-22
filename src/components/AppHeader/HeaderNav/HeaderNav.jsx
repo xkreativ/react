@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './HeaderNav.module.css';
-
 import { HeaderNavItem } from '../HeaderNavItem/HeaderNavItem';
 import {
 	BurgerIcon,
@@ -22,17 +21,13 @@ const items = [
 
 export const HeaderNav = () => (
 	<nav className={styles.nav}>
-		{items.map((item, index) => {
-			return (
-				// eslint-disable-next-line react/jsx-no-undef
-				<React.Fragment key={index}>
-					<HeaderNavItem
-						icon={item.icon}
-						name={item.name}
-						active={item.active}
-					/>
-				</React.Fragment>
-			);
-		})}
+		{items.map((item, index) => (
+			<HeaderNavItem
+				key={index}
+				icon={item.icon}
+				name={item.name}
+				active={item.active}
+			/>
+		))}
 	</nav>
 );
