@@ -13,9 +13,15 @@ export const App = () => {
 	useEffect(() => {
 		fetch(API_URL)
 			.then((res) => {
+				if (!res.ok) {
+					throw new Error(`Ошибка запроса: ${res.status}`);
+				}
 				return res.json();
 			})
 			.then((data) => {
+				if (!data || !data.data) {
+					throw new Error('Ошибка получения данных');
+				}
 				setIngredients(data.data);
 			})
 			.catch((err) => {
