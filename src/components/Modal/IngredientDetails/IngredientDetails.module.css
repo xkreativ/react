@@ -1,0 +1,11 @@
+.ingredient-details {
+	width: 520px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.nutrients {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}

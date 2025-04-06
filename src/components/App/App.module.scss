@@ -1,0 +1,12 @@
+.container {
+	max-width: 1240px;
+	margin: 0 auto;
+}
+
+.constructor {
+	display: flex;
+	gap: 40px;
+
+	composes: container;
+	padding-bottom: 40px;
+}

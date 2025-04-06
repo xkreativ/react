@@ -1,0 +1,13 @@
+.header {
+	display: flex;
+	composes: container from '../App/App.module.scss';
+	max-width: 1280px;
+}
+
+.logo {
+	margin-left: 112px;
+}
+
+.profile {
+	margin-left: auto;
+}

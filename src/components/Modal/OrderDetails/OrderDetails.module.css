@@ -1,0 +1,8 @@
+.order-details {
+	text-align: center;
+}
+
+.order-number {
+	margin-top: 15px;
+	text-shadow: 0 4px 32px #3333ff80, 0 0 8px #3333ff40, 0 0 16px #3333ff40;
+}
